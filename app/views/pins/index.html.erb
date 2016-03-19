@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Lista de Pins </h1>
 
 <% @pins.each do |pin| %>
     
   <div class="col-md-3">
     <div class="thumbnail">  
+      <%= pin.name %>
       <%= image_tag(pin.photo,:class => 'img-responsive') %>
       <%= pin.description %> <br>
       <div class="buttons" style="margin-top: 10px;margin-bottom: 10px;">
-        <%= link_to 'Show', pin ,:class => 'btn btn-primary'%>
-        <%= link_to 'Edit', edit_pin_path(pin),:class => 'btn btn-primary' %>
-        <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' },:class => 'btn btn-primary' %>    
+        <%= link_to 'Ver', pin ,:class => 'btn btn-primary'%>
+        <%= link_to 'Editar', edit_pin_path(pin),:class => 'btn btn-primary' %>
+        <%= link_to 'Borrar', pin, method: :delete, data: { confirm: 'Are you sure?' },:class => 'btn btn-primary' %>    
       </div>
      
     </div>
@@ -22,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Pin', new_pin_path %>
+<%= link_to 'Nuevo Pin', new_pin_path %>

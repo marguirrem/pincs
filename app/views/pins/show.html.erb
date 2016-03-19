@@ -1,8 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Photo:</strong>
-  <%= @pin.photo %>
+	<strong>Name: </strong>
+	<%= @pin.name %>
+</p>
+
+<p>
+  <%= image_tag(@pin.photo) %>
 </p>
 
 <p>
@@ -10,5 +14,5 @@
   <%= @pin.description %>
 </p>
 
-<%= link_to 'Edit', edit_pin_path(@pin) %> |
-<%= link_to 'Back', pins_path %>
+<%= link_to 'Editar', edit_pin_path(@pin) %> |
+<%= link_to 'Atrás', pins_path %>

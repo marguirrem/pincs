@@ -12,13 +12,19 @@
   <% end %>
   <div class="form-group">
     <div class="field">
-      <%= f.label :photo %><br>
+      <%= f.label :name,"Nombre"  %><br>
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>  
+  </div>
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :photo,"Foto" %><br>
       <%= f.text_field :photo, :class => 'form-control' %>
     </div>  
   </div>
   <div class="form-group">
     <div class="field">
-      <%= f.label :description %><br>
+      <%= f.label :description;"Descripción" %><br>
       <%= f.text_field :description,:class =>'form-control' %>
     </div>   
   </div>
