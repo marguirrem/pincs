@@ -10,16 +10,20 @@
       <%= pin.description %> <br>
       <div class="buttons" style="margin-top: 10px;margin-bottom: 10px;">
         <%= link_to 'Ver', pin ,:class => 'btn btn-primary'%>
-        <%= link_to 'Editar', edit_pin_path(pin),:class => 'btn btn-primary' %>
-        <%= link_to 'Borrar', pin, method: :delete, data: { confirm: 'Are you sure?' },:class => 'btn btn-primary' %>    
+        <% if user_signed_in? %>
+          <%= link_to 'Editar', edit_pin_path(pin),:class => 'btn btn-primary' %>
+          <%= link_to 'Borrar', pin, method: :delete, data: { confirm: 'Are you sure?' },:class => 'btn btn-primary' %>   
+        <% end %>
+           
       </div>
      
     </div>
    </div>   
 
+<% end %><br>
+
+<% if user_signed_in? %>
+  <%= link_to 'Nuevo Pin', new_pin_path %>  
 <% end %>
 
 
-<br>
-
-<%= link_to 'Nuevo Pin', new_pin_path %>
